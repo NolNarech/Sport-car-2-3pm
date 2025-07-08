@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Logo and Name</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    body {
+      background-image: url('/img/c62f07874279cea0b2f90de36511fcdd.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      background-color: transparent;
+      box-shadow: 0 6px 16px rgba(4, 13, 67, 0.711);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+    }
+
+    .user-name {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-right: 1rem;
+    }
+
+    .ul-zin {
+      display: flex;
+      justify-content: right;
+      list-style: none;
+      backdrop-filter: blur(6px);
+      text-align: center;
+      font-size: 18px;
+    }
+     
+    li {
+      position: relative;
+    }
+  
+    li > a {
+      padding: 15px 20px;
+      display: flex;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      position: relative; 
+      overflow: hidden;
+    }
+    
+    li > a:hover,
+    li > a:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #00ffff;
+      transform: translateY(-3px);
+    }
+
+    li > a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #00ffff;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    li > a:hover::after {
+      width: 70%;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 99;
+      border-radius: 0 0 8px 8px;
+      min-width: 160px;
+    }
+
+    li:hover .dropdown {
+      display: flex;
+    }
+
+    .dropdown a {
+      padding: 12px 16px;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #00ffff;
+      padding-left: 20px;
+    }
+  
+    .profile {
+      width: 250px;
+      height: 250px;
+      background-color: #555;
+      margin-top: 8rem;
+      margin-left: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgb(27, 34, 226);
+      animation: floatLoop 6s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+    }
+
+    .img-profile {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 0 50px;
+      margin-top: 50px;
+    }
+
+    .text-content {
+      max-width: 500px;
+      color: white;
+    }
+
+    .text-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .text-content h1 span {
+      color: #00ffff;
+    }
+
+    .text-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes floatLoop {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgb(27, 34, 226); }
+      50% { box-shadow: 0 0 30px rgba(27, 34, 226, 0.8); }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .logo-container {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+      
+      .content-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .profile {
+        margin-left: 0;
+      }
+      
+      .text-content {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="/img/" alt="Logo" class="logo">
+      <div class="user-name">Nol Narech</div>
+    </div>
+    
+    <ul class="ul-zin">
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Sport car</a>
+        <ul class="dropdown">
+          <li><a href="#">BUGATI</a></li>
+          <li><a href="#">PAGANI</a></li>
+          <li><a href="#">PORSCHE</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+        <ul class="dropdown">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="content-container">
+    <div class="profile">
+      <img class="img-profile" src="/img/d095b448b3e32d63109cd6d563903519.jpg" alt="Profile Image">
+    </div>
+    
+    <div class="text-content">
+      <h1>Hello <span>World</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    </div>
+  </div>
+</body>
+</html>

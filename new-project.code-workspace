@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "new-project",
+			"path": "."
+		},
+		{
+			"name": "css",
+			"path": "../css"
+		},
+		{
+			"name": "img",
+			"path": "../img"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "new-project"
+	}
+}

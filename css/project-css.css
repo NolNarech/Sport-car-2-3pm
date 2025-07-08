@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    body {
+      background-image: url('/f815eb14aed1bfaa9a1b3104346e35c9.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background-color: transparent;
+      box-shadow: 0 6px 16px rgba(255, 3, 230, 0.42);
+      position: sticky;
+      z-index: 1001;
+      top: 0;
+      position: fixed;
+      width: 100%;
+    }
+    .profile{
+      position:absolute;
+      left: 10%;
+      z-index: 1001;
+      top: 2px;
+    }
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00ffff;
+      box-sizing: 0 0 10px rgba(a,255,255,0.5);
+    }
+    .profile h1 {
+      margin-top: -45px;
+      color: white;
+      margin-left: 55px;
+
+    }
+    .text-p{
+      font-family: "Edu NSW ACT Hand Pre", cursive;
+    }
+    .ul-zin {
+      display: flex;
+      justify-content: right;
+      padding-right: 3rem;
+      list-style: none;
+      backdrop-filter: blur(30px);
+      text-align: center;
+      font-size: 18px;
+    }
+     
+    li {
+      position: relative;
+    }
+  
+    li > a {
+      padding: 15px 20px;
+      display: flex;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      position: relative; 
+      overflow: hidden;
+   
+    }
+    li > a:hover,
+    li > a:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #00ffff;
+      transform: translateY(-3px);
+    }
+
+    li > a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #00ffff;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    li ul a:hover {
+      background-color: rgb(244, 241, 241);
+      color: #00dcdc;
+      transform: translateY(-3px);
+    }
+    li a::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: #00ffff;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      flex-direction: column;
+      background-color: #000000;
+      margin-top: 1px;
+      overflow: hidden;
+    }
+
+    li:hover .dropdown {
+      display: flex;
+      border-radius: 8px;
+    }
+
+
+    .dropdown a:hover {
+      background-color: rgb(255, 255, 255);
+      color: #000000;
+
+    }
+
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 80px; /* space under navbar */
+      padding: 20px;
+      flex-wrap: wrap; /* responsive */
+    }
+
+    .slid-video-left {
+      width: 500px;
+      height: 350px;
+      border-radius: 15px;
+      backdrop-filter: blur(60px);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      box-shadow: 0.5px 1px 8px 1px #ffb004, -1px 1px 8px 1px #ffaf04;
+      overflow: hidden;
+    }
+
+    .slid-video-left video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    video{
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .text-content {
+      width: 550px;
+      height: 400px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .text-content h1 {
+      font-size: 4.5rem;
+      text-shadow: 2px 2px 4px rgb(255, 0, 208);
+      margin-bottom: 15px;
+    }
+
+    .text-content h1 span {
+      color: yellow;
+    }
+
+    .subtitle {
+      font-size: 2rem;
+    }
+
+
+    .footer{
+      width: 100%;
+      height:200px;
+      margin-top: 500px;
+    }
+
+    
+    
